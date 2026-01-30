@@ -12,6 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/perguntas")
+@CrossOrigin(origins = "http://localhost:4200")
 public class PerguntaController {
 
     private final PerguntaService perguntaService;
@@ -24,19 +25,6 @@ public class PerguntaController {
     public ResponseEntity<Pergunta> criar(@Valid @RequestBody Pergunta pergunta) {
         Pergunta criada = perguntaService.criar(pergunta);
         return ResponseEntity.status(HttpStatus.CREATED).body(criada);
-    }
-
-    @GetMapping
-    public ResponseEntity<List<Pergunta>> listar() {
-        List<Pergunta> perguntas = perguntaService.listar();
-        return ResponseEntity.ok(perguntas);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Pergunta> obterPorId(@PathVariable Long id) {
-        return perguntaService.obterPorId(id)
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PutMapping("/{id}")
@@ -59,18 +47,6 @@ public class PerguntaController {
         }
     }
 
-    @GetMapping("/categoria/{categoria}")
-    public ResponseEntity<List<Pergunta>> obterPorCategoria(@PathVariable String categoria) {
-        List<Pergunta> perguntas = perguntaService.obterPorCategoria(categoria);
-        return ResponseEntity.ok(perguntas);
-    }
-
-    @GetMapping("/dificuldade/{dificuldade}")
-    public ResponseEntity<List<Pergunta>> obterPorDificuldade(@PathVariable String dificuldade) {
-        List<Pergunta> perguntas = perguntaService.obterPorDificuldade(dificuldade);
-        return ResponseEntity.ok(perguntas);
-    }
-
     @PostMapping("/{id}/validar")
     public ResponseEntity<Map<String, Object>> validarResposta(
             @PathVariable Long id,
@@ -85,11 +61,5 @@ public class PerguntaController {
         } catch (RuntimeException e) {
             return ResponseEntity.notFound().build();
         }
-    }
-
-    @GetMapping("/count")
-    public ResponseEntity<Map<String, Long>> contar() {
-        long total = perguntaService.contar();
-        return ResponseEntity.ok(Map.of("total", total));
     }
 }
