@@ -1,0 +1,11 @@
+/workspaces/projeto-pweb1-backend/src/main/java/com/quiz/api/QuizApiApplication.java
+/workspaces/projeto-pweb1-backend/src/main/java/com/quiz/api/config/DataLoader.java
+/workspaces/projeto-pweb1-backend/src/main/java/com/quiz/api/controller/ConsultaController.java
+/workspaces/projeto-pweb1-backend/src/main/java/com/quiz/api/controller/PerguntaController.java
+/workspaces/projeto-pweb1-backend/src/main/java/com/quiz/api/exception/ErrorResponse.java
+/workspaces/projeto-pweb1-backend/src/main/java/com/quiz/api/exception/GlobalExceptionHandler.java
+/workspaces/projeto-pweb1-backend/src/main/java/com/quiz/api/exception/ResourceNotFoundException.java
+/workspaces/projeto-pweb1-backend/src/main/java/com/quiz/api/model/Pergunta.java
+/workspaces/projeto-pweb1-backend/src/main/java/com/quiz/api/repository/PerguntaRepository.java
+/workspaces/projeto-pweb1-backend/src/main/java/com/quiz/api/service/ConsultaService.java
+/workspaces/projeto-pweb1-backend/src/main/java/com/quiz/api/service/PerguntaService.java

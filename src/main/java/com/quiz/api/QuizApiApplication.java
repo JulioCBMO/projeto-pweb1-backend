@@ -19,14 +19,10 @@ public class QuizApiApplication {
         System.out.println("\n--- MÓDULO 1: Cadastramento/Remoção ---");
         System.out.println("POST   /api/perguntas");
         System.out.println("PUT    /api/perguntas/{id}");
-        System.out.println("PATCH  /api/perguntas/{id}");
         System.out.println("DELETE /api/perguntas/{id}");
         System.out.println("\n--- MÓDULO 2: Consultas ---");
         System.out.println("GET    /api/consultas/perguntas");
         System.out.println("GET    /api/consultas/perguntas/{id}");
-        System.out.println("GET    /api/consultas/perguntas/buscar?texto=...");
-        System.out.println("GET    /api/consultas/perguntas/aleatorias?quantidade=...");
-        System.out.println("GET    /api/consultas/estatisticas");
         System.out.println("===========================================\n");
     }
 }
