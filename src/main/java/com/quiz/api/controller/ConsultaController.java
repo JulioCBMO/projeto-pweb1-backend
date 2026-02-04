@@ -6,11 +6,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/consultas")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*") 
 public class ConsultaController {
 
     private final ConsultaService consultaService;
@@ -19,17 +18,16 @@ public class ConsultaController {
         this.consultaService = consultaService;
     }
 
-    @GetMapping
+    @GetMapping("/perguntas") 
     public ResponseEntity<List<Pergunta>> listarTodas() {
         List<Pergunta> perguntas = consultaService.findAll();
         return ResponseEntity.ok(perguntas);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/perguntas/{id}")
     public ResponseEntity<Pergunta> consultarPorId(@PathVariable Long id) {
         return consultaService.findById(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
-
 }
