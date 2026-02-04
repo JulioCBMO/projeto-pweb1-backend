@@ -9,8 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = "https://automatic-potato-v66v755v4g6w3p94v-4200.app.github.dev")
 @RequestMapping("/api/consultas")
-@CrossOrigin(origins = "*")
+
 public class ConsultaController {
 
     private final ConsultaService consultaService;

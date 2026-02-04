@@ -1,11 +1,11 @@
 com/quiz/api/exception/ResourceNotFoundException.class
 com/quiz/api/exception/GlobalExceptionHandler.class
-com/quiz/api/config/DataLoader.class
-com/quiz/api/exception/ErrorResponse.class
 com/quiz/api/service/ConsultaService.class
-com/quiz/api/service/PerguntaService.class
 com/quiz/api/controller/ConsultaController.class
 com/quiz/api/controller/PerguntaController.class
-com/quiz/api/model/Pergunta.class
 com/quiz/api/QuizApiApplication.class
 com/quiz/api/repository/PerguntaRepository.class
+com/quiz/api/config/DataLoader.class
+com/quiz/api/exception/ErrorResponse.class
+com/quiz/api/service/PerguntaService.class
+com/quiz/api/model/Pergunta.class

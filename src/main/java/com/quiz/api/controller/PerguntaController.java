@@ -12,7 +12,11 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/perguntas")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://automatic-potato-v66v755v4g6w3p94v-4200.app.github.dev",
+    allowedMethods = {"GET","POST","PUT","DELETE","OPTIONS"},
+    allowedHeaders = "*",
+    allowCredentials = "true"
+)
 public class PerguntaController {
 
     private final PerguntaService perguntaService;
@@ -20,6 +24,13 @@ public class PerguntaController {
     public PerguntaController(PerguntaService perguntaService) {
         this.perguntaService = perguntaService;
     }
+
+    @GetMapping
+    public ResponseEntity<List<Pergunta>> listar() {
+        List<Pergunta> perguntas = perguntaService.listar();
+        return ResponseEntity.ok(perguntas);
+}
+
 
     @PostMapping
     public ResponseEntity<Pergunta> criar(@Valid @RequestBody Pergunta pergunta) {
